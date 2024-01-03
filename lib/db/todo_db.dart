@@ -34,15 +34,15 @@ final class TodoDB extends GetxService {
   }
 
   Future<void> _onCreate(Database db, int version) => db.execute('''
-    CREATE TABLE IF NOT EXISTS $_tableName (
+    CREATE TABLE IF NOT EXISTS $_tableName(
     $_columnId STRING PRIMARY KEY,
     $_columnTitle STRING NOT NULL,
     $_columnNote STRING NOT NULL,
     $_columnIsDone INTEGER NOT NULL,
     $_columnCreatedAt STRING NOT NULL,
     $_columnUpdatedAt STRING NOT NULL,
-    $_columnCompletedAt STRING NOT NULL,
-    )''');
+    $_columnCompletedAt STRING NOT NULL)
+    ''');
 
   Future<void> insertOne(Todo todo) => _db!.insert(_tableName, todo.toJson());
 
