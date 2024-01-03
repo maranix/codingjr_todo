@@ -2,7 +2,7 @@
 
 Todo app made using `sqflite` and `getx`.
 
-Download release APK from:- [Here]()
+Download release APK from:- [Here](https://github.com/maranix/codingjr_todo/raw/main/app-release.apk)
 
 ## Tech Stack
 
