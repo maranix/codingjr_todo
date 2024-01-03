@@ -1,5 +1,7 @@
 # CodingJr Todo App
 
+### This Project Supports and Runs on All Platforms 😄
+
 Todo app made using `sqflite` and `getx`.
 
 Download release APK from:- [Here](https://github.com/maranix/codingjr_todo/raw/main/app-release.apk)
