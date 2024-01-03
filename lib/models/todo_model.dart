@@ -1,6 +1,9 @@
+// Importing necessary packages and libraries
 import 'package:equatable/equatable.dart';
 
+// Class representing a Todo with Equatable support for equality comparisons
 final class Todo extends Equatable {
+  // Constructor for creating a Todo instance with required fields
   const Todo({
     required this.id,
     required this.title,
@@ -11,6 +14,7 @@ final class Todo extends Equatable {
     required this.isDone,
   });
 
+  // Fields representing properties of a Todo
   final String id;
   final String title;
   final String note;
@@ -19,6 +23,7 @@ final class Todo extends Equatable {
   final DateTime updatedAt;
   final DateTime completedAt;
 
+  // Factory method to create an empty Todo with current timestamp
   static Todo get empty {
     final dateTime = DateTime.now();
 
@@ -33,6 +38,7 @@ final class Todo extends Equatable {
     );
   }
 
+  // Factory method to create a Todo from JSON data
   factory Todo.fromJson(Map<String, dynamic> json) {
     switch (json) {
       case {
@@ -61,6 +67,7 @@ final class Todo extends Equatable {
     }
   }
 
+  // Method to convert Todo to JSON format
   Map<String, dynamic> toJson() => {
         'id': id,
         'title': title,
@@ -71,6 +78,7 @@ final class Todo extends Equatable {
         'completed_at': completedAt.toIso8601String(),
       };
 
+  // Method to create a copy of the Todo with specified fields updated
   Todo copyWith({
     String? id,
     String? title,
@@ -90,6 +98,7 @@ final class Todo extends Equatable {
         isDone: isDone ?? this.isDone,
       );
 
+  // Method required for Equatable to perform equality comparisons
   @override
   List<Object?> get props => [
         id,
